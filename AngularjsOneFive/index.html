@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="BookStoreApp" ng-app="store">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BookStoreApp</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.9";
+        fjs.parentNode.insertBefore(js, fjs);
+      }
+        (document, 'script', 'facebook-jssdk'));
+  </script>
+  <ui-view></ui-view>
+  <!-- <div class="container-fluid">
+    <div class="jumbotron">
+      <h1>Books</h1>
+    </div>
+  </div>
+  <div class="container" ng-controller="BooksController as book">
+    <form class="form-inline">
+			<div class="form-group">
+				<label>Search:</label>
+				<input class="form-control" type="text" name="filter" ng-model="booksFilter.title">
+			</div>
+			<div class="form-group">
+				<label>Sort By: </label>
+				<select class="form-control" ng-model="sortBooks">
+					<option value="id">id</option>
+					<option value="title">Title</option>
+					<option value="author">Author</option>
+					<option value="editorial">Editorial</option>
+				</select>
+			</div>
+		</form>
+    <br>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="book in booksData | filter: booksFilter:strict | orderBy: sortBooks">
+        <div class="media">
+          <div class="media-left media-middle">
+            <a href="#"><img ng-src="{{book.img}}" class="media-object" width="125px" height="auto" ></a>
+          </div>
+          <div class="media-body">
+            <mark>id: {{ book.id }}</mark>
+              <h1>{{ book.title }}</h1>
+              <h2>{{ book.author }}</h2>
+              <h3>{{ book.editorial }}</h3>
+              <p>{{ book.description }}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div> -->
+
+  <!-- AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/apprev.js"></script>
+</body>
+</html>

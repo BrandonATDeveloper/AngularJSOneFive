@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="jumbotron">
+    <h1>Books</h1>
+  </div>
+</div>
+<div class="container" ng-controller="BooksController as book">
+  <form class="form-inline">
+    <div class="form-group">
+      <label>Search:</label>
+      <input class="form-control" type="text" name="filter" ng-model="booksFilter.title">
+    </div>
+    <div class="form-group">
+      <label>Sort By: </label>
+      <select class="form-control" ng-model="sortBooks">
+        <option value="id">id</option>
+        <option value="title">Title</option>
+        <option value="author">Author</option>
+        <option value="editorial">Editorial</option>
+      </select>
+    </div>
+  </form>
+  <br>
+  <ul class="list-group">
+    <li class="list-group-item" ng-repeat="book in booksData | filter: booksFilter:strict | orderBy: sortBooks">
+      <div class="media">
+        <div class="media-left media-middle">
+          <a ui-sref="tab" ui-sref-active="active"><img ng-src="{{book.img}}" class="media-object" width="125px" height="auto" ></a>
+        </div>
+        <div class="media-body">
+          <mark>id: {{ book.id }}</mark>
+            <h1>{{ book.title }}</h1>
+            <h2>{{ book.author }}</h2>
+            <h3>{{ book.editorial }}</h3>
+            <p>{{ book.description }}</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+  </div>
+</div>
